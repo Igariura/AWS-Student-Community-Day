@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'll Be Attending - AWS Student Community Day 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --aws-orange: #FF9900;
+            --aws-dark: #232F3E;
+            --aws-light: #FFFFFF;
+            --bg-dark: #0a0e1a;
+            --accent-blue: #00D4FF;
+            --aws-purple: #8B5CF6;
+            --aws-purple-light: #A78BFA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--aws-light);
+            background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--aws-orange);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--aws-orange), var(--aws-purple-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .badge-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .badge-preview {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
+            border: 3px solid var(--aws-orange);
+        }
+
+        .badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="hexagons" x="0" y="0" width="50" height="43.4" patternUnits="userSpaceOnUse"><polygon points="25 0, 50 14.43, 50 43.3, 25 57.73, 0 43.3, 0 14.43" fill="none" stroke="%23FF9900" stroke-width="1" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23hexagons)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .badge::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 153, 0, 0.15) 0%, transparent 70%);
+            top: -50px;
+            right: -50px;
+            border-radius: 50%;
+        }
+
+        .badge-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .badge-content::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--aws-orange);
+            border-radius: 50%;
+            bottom: -20px;
+            left: -30px;
+            opacity: 0.3;
+        }
+
+        .badge-content::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--aws-purple);
+            border-radius: 50%;
+            top: -10px;
+            right: -20px;
+            opacity: 0.3;
+        }
+
+        .badge-logo {
+            width: 80px;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .badge-logo-image {
+            width: 280px;
+            max-width: 90%;
+            margin-bottom: 0.8rem;
+            border-radius: 10px;
+        }
+
+        .badge-year {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--aws-orange);
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .badge-subtitle {
+            color: var(--aws-orange);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .badge-status {
+            background: var(--aws-orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
+        }
+
+        .badge-bottom-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .badge-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            flex: 1;
+        }
+
+        .badge-icon {
+            font-size: 1.3rem;
+        }
+
+        .badge-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .badge-date {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .badge-venue {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--aws-orange);
+            color: var(--aws-dark);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid var(--aws-orange);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .download-btn:hover {
+            background: transparent;
+            color: var(--aws-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3);
+        }
+
+        .instructions {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .instructions h3 {
+            color: var(--aws-orange);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 0.8rem;
+        }
+
+        .share-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .share-section h3 {
+            color: var(--aws-orange);
+            margin-bottom: 1rem;
+        }
+
+        .share-section p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .hashtag {
+            color: var(--aws-purple-light);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .badge {
+                width: 320px;
+                height: 320px;
+                padding: 1.5rem;
+            }
+
+            .badge-logo-image {
+                width: 200px;
+                margin-bottom: 0.5rem;
+            }
+
+            .badge-year {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .badge-title {
+                font-size: 1.2rem;
+            }
+
+            .badge-status {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .badge-text {
+                font-size: 0.75rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Event Page</a>
+        
+        <h1>I'll Be Attending!</h1>
+        <p class="subtitle">Download your attendance badge and share it on social media</p>
+
+        <div class="badge-section">
+            <div class="badge-preview">
+                <div class="badge" id="attendanceBadge">
+                    <div class="badge-content">
+                        <img src="images/logo.jpg" alt="AWS Student Community Day Logo" class="badge-logo-image">
+                        
+                        <div class="badge-year">2026</div>
+                        
+                        <div class="badge-status">I'LL BE ATTENDING</div>
+                        
+                        <div class="badge-bottom-info">
+                            <div class="badge-info-item">
+                                <div class="badge-icon">📍</div>
+                                <div class="badge-text">Meru University</div>
+                            </div>
+                            <div class="badge-info-item">
+                                <div class="badge-icon">📅</div>
+                                <div class="badge-text">Feb 28, 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="download-btn" onclick="downloadBadge()">📥 Download Badge</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            
+            
+                
+                
+                <li>Share it on your social media profiles (Twitter, LinkedIn, Facebook, Instagram)</li>
+                <li>Use the hashtag <span class="hashtag">#AWSStudentCommunityDay2026</span></li>
+                <li>Tag your friends who should attend!</li>
+            
+        </div>
+
+        <div class="share-section">
+            <h3>Spread the Word!</h3>
+            <p>Help us make AWS Student Community Day 2026 the biggest event yet!</p>
+            <p class="hashtag">#AWSStudentCommunityDay2026 #BuildOnAWS #CloudComputing</p>
+        </div>
+    </div>
+
+    <script>
+        function downloadBadge() {
+            // Using html2canvas library from CDN
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+            script.onload = function() {
+                const badge = document.getElementById('attendanceBadge');
+                
+                html2canvas(badge, {
+                    backgroundColor: null,
+                    scale: 2,
+                    logging: false
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'AWS-Student-Community-Day-2026-Badge.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            };
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+</html>
