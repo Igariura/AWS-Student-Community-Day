@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'll Be Attending - AWS Student Community Day 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>I'm Attending - AWS Community Day Kenya 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,608 +16,656 @@
             --aws-orange: #FF9900;
             --aws-dark: #232F3E;
             --aws-light: #FFFFFF;
-            --bg-dark: #0a0e1a;
+            --badge-bg: #1a3a52;
             --accent-blue: #00D4FF;
             --aws-purple: #8B5CF6;
-            --aws-purple-light: #A78BFA;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--aws-light);
-            background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 100%);
+            background: linear-gradient(135deg, #0f1419 0%, #1a3a52 50%, #0f1419 100%);
             min-height: 100vh;
             padding: 2rem;
+            color: white;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--aws-orange);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: transform 0.3s;
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .back-link:hover {
-            transform: translateX(-5px);
+        .header-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
         }
 
-        h1 {
+        .header h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--aws-orange), var(--aws-purple-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        /* Photo Upload Section */
-        .upload-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .upload-section h3 {
             color: var(--aws-orange);
-            font-family: 'Orbitron', sans-serif;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .upload-area {
-            border: 3px dashed rgba(255, 153, 0, 0.4);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .upload-area:hover {
-            border-color: var(--aws-orange);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .upload-area.dragover {
-            border-color: var(--aws-orange);
-            background: rgba(255, 153, 0, 0.1);
-        }
-
-        .upload-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .upload-text {
-            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 0.5rem;
         }
 
-        .upload-hint {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
         }
 
-        #photoInput {
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 2px solid rgba(255, 153, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--aws-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #1a3a52;
+            color: white;
+            padding: 0.5rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--aws-orange);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .photo-upload {
+            margin-top: 1rem;
+        }
+
+        .photo-upload-label {
+            display: block;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 153, 0, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .photo-upload-label:hover {
+            background: rgba(255, 153, 0, 0.1);
+            border-color: var(--aws-orange);
+        }
+
+        .photo-upload input[type="file"] {
             display: none;
         }
 
         .photo-preview {
             margin-top: 1rem;
-            display: none;
+            text-align: center;
         }
 
         .photo-preview img {
-            width: 150px;
-            height: 150px;
+            max-width: 200px;
+            max-height: 200px;
             border-radius: 50%;
+            border: 3px solid var(--aws-orange);
             object-fit: cover;
-            border: 4px solid var(--aws-orange);
-            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.3);
         }
 
-        .remove-photo {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #ff4444;
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--aws-orange);
+            color: var(--aws-dark);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
-            font-size: 0.9rem;
-            text-decoration: underline;
+            transition: all 0.3s;
+            font-family: 'Orbitron', sans-serif;
         }
 
-        .remove-photo:hover {
-            color: #ff6666;
+        .submit-btn:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
 
+        .submit-btn:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Badge Preview Section */
         .badge-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            margin-bottom: 2rem;
+            position: sticky;
+            top: 2rem;
         }
 
         .badge-preview {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .badge {
-            width: 400px;
-            height: 500px;
-            background: linear-gradient(135deg, #2d1b4e 0%, #1a0d2e 100%);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             padding: 2rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
-            border: 3px solid var(--aws-orange);
-        }
-
-        .badge::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="hexagons" x="0" y="0" width="50" height="43.4" patternUnits="userSpaceOnUse"><polygon points="25 0, 50 14.43, 50 43.3, 25 57.73, 0 43.3, 0 14.43" fill="none" stroke="%23FF9900" stroke-width="1" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23hexagons)"/></svg>');
-            opacity: 0.6;
-        }
-
-        .badge::after {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(255, 153, 0, 0.15) 0%, transparent 70%);
-            top: -50px;
-            right: -50px;
-            border-radius: 50%;
-        }
-
-        .badge-content {
-            position: relative;
-            z-index: 2;
+            border: 2px solid rgba(255, 153, 0, 0.3);
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            width: 100%;
         }
 
-        .badge-content::before {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border: 2px solid var(--aws-orange);
-            border-radius: 50%;
-            bottom: -20px;
-            left: -30px;
-            opacity: 0.3;
-        }
-
-        .badge-content::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--aws-purple);
-            border-radius: 50%;
-            top: -10px;
-            right: -20px;
-            opacity: 0.3;
-        }
-
-        /* User Photo on Badge */
-        .badge-user-photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--aws-orange);
-            margin-bottom: 1.2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-
-        .badge-user-photo.show {
-            display: block;
-        }
-
-        .badge-logo-image {
-            width: 240px;
-            max-width: 90%;
-            margin-bottom: 0.8rem;
-            border-radius: 10px;
-        }
-
-        .badge-year {
+        .badge-preview h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
             color: var(--aws-orange);
-            letter-spacing: 3px;
-            margin-bottom: 1.2rem;
-        }
-
-        .badge-status {
-            background: var(--aws-orange);
-            color: white;
-            padding: 0.9rem 2.2rem;
-            border-radius: 50px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            font-weight: 900;
-            letter-spacing: 2px;
             margin-bottom: 1.5rem;
-            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
+            font-size: 1.5rem;
         }
 
-        .badge-bottom-info {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
+        /* Badge Canvas Container */
+        .badge-canvas-container {
+            position: relative;
             width: 100%;
-            margin-top: auto;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .badge-info-item {
+        #badgeCanvas {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .badge-actions {
+            margin-top: 1.5rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
-            flex: 1;
-        }
-
-        .badge-icon {
-            font-size: 1.3rem;
-        }
-
-        .badge-text {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-align: center;
-            line-height: 1.3;
-        }
-
-        .download-buttons {
-            display: flex;
-            justify-content: center;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
-        .download-btn {
-            display: inline-block;
-            background: var(--aws-orange);
-            color: var(--aws-dark);
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 2px solid var(--aws-orange);
+        .badge-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
             cursor: pointer;
-            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            font-size: 1rem;
         }
 
-        .download-btn:hover {
-            background: transparent;
-            color: var(--aws-orange);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3);
-        }
-
-        .download-btn.secondary {
-            background: transparent;
-            color: var(--aws-orange);
-            border: 2px solid var(--aws-orange);
-        }
-
-        .download-btn.secondary:hover {
+        .badge-btn-primary {
             background: var(--aws-orange);
             color: var(--aws-dark);
         }
 
-        .instructions {
-            text-align: center;
-            margin-top: 2rem;
+        .badge-btn-primary:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
         }
 
-        .instructions h3 {
+        .badge-btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .badge-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--aws-orange);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
             color: var(--aws-orange);
-            font-family: 'Orbitron', sans-serif;
-            margin-bottom: 1rem;
+            transform: translateX(-5px);
         }
 
-        .instructions ol {
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-        }
-
-        .instructions li {
-            margin-bottom: 0.8rem;
-        }
-
-        .share-section {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .share-section h3 {
-            color: var(--aws-orange);
-            margin-bottom: 1rem;
-        }
-
-        .share-section p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-        }
-
-        .hashtag {
-            color: var(--aws-purple-light);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .badge {
-                width: 320px;
-                height: 420px;
-                padding: 1.5rem;
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
             }
 
-            .badge-user-photo {
-                width: 110px;
-                height: 110px;
-                margin-bottom: 1rem;
+            .badge-section {
+                position: relative;
+                top: 0;
             }
 
-            .badge-logo-image {
-                width: 200px;
-                margin-bottom: 0.5rem;
-            }
-
-            .badge-year {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .badge-status {
-                font-size: 0.9rem;
-                padding: 0.7rem 1.5rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .badge-text {
-                font-size: 0.75rem;
-            }
-
-            h1 {
+            .header h1 {
                 font-size: 2rem;
             }
 
-            .download-buttons {
-                flex-direction: column;
+            body {
+                padding: 1rem;
             }
+        }
 
-            .download-btn {
-                width: 100%;
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(0, 212, 255, 0.2);
+            border: 2px solid var(--accent-blue);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Event Page</a>
+        <a href="index.html" class="back-link">← Back to Main Page</a>
         
-        <h1>I'll Be Attending!</h1>
-        <p class="subtitle">Upload your photo and download your personalized attendance badge</p>
-
-        <!-- Photo Upload Section -->
-        <div class="upload-section">
-            <h3>📸 Add Your Photo (Optional)</h3>
-            <div class="upload-area" id="uploadArea" onclick="document.getElementById('photoInput').click()">
-                <div class="upload-icon">🖼️</div>
-                <p class="upload-text">Click to upload or drag and drop your photo</p>
-                <p class="upload-hint">Recommended: Square photo, at least 400x400px</p>
-            </div>
-            <input type="file" id="photoInput" accept="image/*">
-            
-            <div class="photo-preview" id="photoPreview">
-                <img id="previewImg" src="" alt="Your photo">
-                <div class="remove-photo" onclick="removePhoto()">✕ Remove Photo</div>
-            </div>
+        <div class="header">
+            <h1>I'm Attending!</h1>
+            <p>Create your personalized badge to share on social media</p>
         </div>
 
-        <!-- Badge Preview -->
-        <div class="badge-section">
-            <div class="badge-preview">
-                <div class="badge" id="attendanceBadge">
-                    <div class="badge-content">
-                        <!-- User Photo (hidden by default) -->
-                        <img id="badgeUserPhoto" class="badge-user-photo" src="" alt="Your photo">
-                        
-                        <img src="images/logo.jpg" alt="AWS Student Community Day Logo" class="badge-logo-image">
-                        
-                        <div class="badge-year">2026</div>
-                        
-                        <div class="badge-status">I'LL BE ATTENDING</div>
-                        
-                        <div class="badge-bottom-info">
-                            <div class="badge-info-item">
-                                <div class="badge-icon">📍</div>
-                                <div class="badge-text">Meru University</div>
-                            </div>
-                            <div class="badge-info-item">
-                                <div class="badge-icon">📅</div>
-                                <div class="badge-text">Feb 28, 2026</div>
-                            </div>
+        <div class="content-wrapper">
+            <!-- Badge Customization Form -->
+            <div class="form-section">
+                <h2>Create Your Badge</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label>Profile Photo (Optional)</label>
+                        <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            Upload a square photo for best results. Your photo will be displayed in a circle.
+                        </p>
+                        <div class="photo-upload">
+                            <label for="photoUpload" class="photo-upload-label">
+                                <span id="uploadText">📸 Click to upload photo</span>
+                            </label>
+                            <input type="file" id="photoUpload" accept="image/*">
+                            <div class="photo-preview" id="photoPreview"></div>
                         </div>
+                    </div>
+
+                    <div class="success-message" id="successMessage">
+                        ✓ Badge generated successfully! Download it below.
+                    </div>
+
+                    <button type="submit" class="submit-btn">Generate My Badge</button>
+                </form>
+            </div>
+
+            <!-- Badge Preview -->
+            <div class="badge-section">
+                <div class="badge-preview">
+                    <h3>Your Badge Preview</h3>
+                    <div class="badge-canvas-container">
+                        <canvas id="badgeCanvas" width="1080" height="1080"></canvas>
+                    </div>
+                    <div class="badge-actions">
+                        <button class="badge-btn badge-btn-primary" id="downloadBtn">
+                            ⬇️ Download Badge
+                        </button>
+                        <button class="badge-btn badge-btn-secondary" id="shareBtn">
+                            📱 Share on Social Media
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <div class="download-buttons">
-                <button class="download-btn" onclick="downloadBadge(true)">📥 Download with Photo</button>
-                <button class="download-btn secondary" onclick="downloadBadge(false)">📥 Download without Photo</button>
-            </div>
-        </div>
-
-        <div class="instructions">
-            <h3>How to Use Your Badge</h3>
-            <ol>
-                <li>Upload your photo (optional) to personalize your badge</li>
-                <li>Download your badge (with or without photo)</li>
-                <li>Share it on your social media profiles (Twitter, LinkedIn, Facebook, Instagram)</li>
-                <li>Use the hashtag <span class="hashtag">#AWSStudentCommunityDay2026</span></li>
-                <li>Tag your friends who should attend!</li>
-            </ol>
-        </div>
-
-        <div class="share-section">
-            <h3>Spread the Word!</h3>
-            <p>Help us make AWS Student Community Day 2026 the biggest event yet!</p>
-            <p class="hashtag">#AWSStudentCommunityDay2026 #BuildOnAWS #CloudComputing</p>
         </div>
     </div>
 
     <script>
-        let userPhotoData = null;
-
-        // Photo upload handling
-        const photoInput = document.getElementById('photoInput');
-        const uploadArea = document.getElementById('uploadArea');
+        const form = document.getElementById('registrationForm');
+        const canvas = document.getElementById('badgeCanvas');
+        const ctx = canvas.getContext('2d');
+        const photoUpload = document.getElementById('photoUpload');
         const photoPreview = document.getElementById('photoPreview');
-        const previewImg = document.getElementById('previewImg');
-        const badgeUserPhoto = document.getElementById('badgeUserPhoto');
+        const uploadText = document.getElementById('uploadText');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const successMessage = document.getElementById('successMessage');
 
-        photoInput.addEventListener('change', handlePhotoUpload);
+        let uploadedPhoto = null;
+        let badgeGenerated = false;
 
-        // Drag and drop
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
+        // Draw initial badge
+        drawBadge(null);
 
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            if (files.length > 0 && files[0].type.startsWith('image/')) {
-                handlePhotoFile(files[0]);
-            }
-        });
-
-        function handlePhotoUpload(e) {
+        // Handle photo upload
+        photoUpload.addEventListener('change', function(e) {
             const file = e.target.files[0];
-            if (file && file.type.startsWith('image/')) {
-                handlePhotoFile(file);
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        uploadedPhoto = img;
+                        
+                        // Show preview
+                        photoPreview.innerHTML = `<img src="${event.target.result}" alt="Preview">`;
+                        uploadText.textContent = '✓ Photo uploaded';
+                        
+                        // Update badge
+                        drawBadge(img);
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
             }
-        }
+        });
 
-        function handlePhotoFile(file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                userPhotoData = e.target.result;
-                previewImg.src = userPhotoData;
-                badgeUserPhoto.src = userPhotoData;
-                badgeUserPhoto.classList.add('show');
-                photoPreview.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function removePhoto() {
-            userPhotoData = null;
-            photoInput.value = '';
-            previewImg.src = '';
-            badgeUserPhoto.src = '';
-            badgeUserPhoto.classList.remove('show');
-            photoPreview.style.display = 'none';
-        }
-
-        function downloadBadge(withPhoto) {
-            // Temporarily hide/show photo based on user choice
-            const photoWasVisible = badgeUserPhoto.classList.contains('show');
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            if (withPhoto && userPhotoData) {
-                badgeUserPhoto.classList.add('show');
-            } else {
-                badgeUserPhoto.classList.remove('show');
+            // Draw final badge
+            drawBadge(uploadedPhoto);
+            badgeGenerated = true;
+            
+            // Show success message
+            successMessage.classList.add('show');
+            
+            console.log('Badge generated successfully');
+        });
+
+        // Download badge
+        downloadBtn.addEventListener('click', function() {
+            if (!badgeGenerated) {
+                alert('Please generate your badge first by submitting the form!');
+                return;
             }
+            
+            const link = document.createElement('a');
+            link.download = `AWS-Community-Day-Badge.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
 
-            // Using html2canvas library from CDN
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-            script.onload = function() {
-                const badge = document.getElementById('attendanceBadge');
-                
-                html2canvas(badge, {
-                    backgroundColor: null,
-                    scale: 2,
-                    logging: false,
-                    useCORS: true,
-                    allowTaint: true
-                }).then(canvas => {
-                    const link = document.createElement('a');
-                    const filename = withPhoto && userPhotoData ? 
-                        'AWS-Community-Day-2026-Badge-With-Photo.png' : 
-                        'AWS-Community-Day-2026-Badge.png';
-                    link.download = filename;
-                    link.href = canvas.toDataURL('image/png');
-                    link.click();
-
-                    // Restore photo visibility state
-                    if (photoWasVisible) {
-                        badgeUserPhoto.classList.add('show');
-                    } else {
-                        badgeUserPhoto.classList.remove('show');
-                    }
+        // Share badge
+        shareBtn.addEventListener('click', function() {
+            if (!badgeGenerated) {
+                alert('Please generate your badge first by submitting the form!');
+                return;
+            }
+            
+            const text = "I'm attending AWS Community Day Kenya 2026! 🚀 Join me at Kenya's premier student cloud event. #AWSCommunityDay #CloudComputing #Kenya";
+            
+            if (navigator.share) {
+                canvas.toBlob(function(blob) {
+                    const file = new File([blob], 'badge.png', { type: 'image/png' });
+                    navigator.share({
+                        title: 'AWS Community Day Kenya 2026',
+                        text: text,
+                        files: [file]
+                    }).catch(err => console.log('Share failed:', err));
                 });
+            } else {
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                window.open(twitterUrl, '_blank');
+            }
+        });
+
+        // Draw badge function
+        function drawBadge(photo) {
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+            
+            // Background gradient with purple theme
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, '#1a0d2e');
+            gradient.addColorStop(0.5, '#2d1b4e');
+            gradient.addColorStop(1, '#1f1235');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+            
+            // Draw hexagon decorations (top-left) with purple theme
+            drawHexagonPattern(100, 100, 80);
+            drawHexagonPattern(200, 80, 60);
+            
+            // Draw hexagon decorations (top-right)
+            drawHexagonPattern(width - 200, 80, 70);
+            drawHexagonPattern(width - 100, 120, 60);
+            
+            // Draw hexagon decorations (bottom-right)
+            drawHexagonPattern(width - 150, height - 100, 80);
+            
+            // Photo or placeholder
+            if (photo) {
+                // Draw circular photo with proper cropping
+                ctx.save();
+                const photoSize = 320;
+                const photoY = 250;
+                
+                // Create circular clipping path
+                ctx.beginPath();
+                ctx.arc(width / 2, photoY, photoSize / 2, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.clip();
+                
+                // Calculate scaling to cover the circle
+                const scale = Math.max(photoSize / photo.width, photoSize / photo.height);
+                const scaledWidth = photo.width * scale;
+                const scaledHeight = photo.height * scale;
+                
+                // Center the image
+                const x = (width / 2) - (scaledWidth / 2);
+                const y = photoY - (scaledHeight / 2);
+                
+                ctx.drawImage(photo, x, y, scaledWidth, scaledHeight);
+                ctx.restore();
+                
+                // Draw circle border with orange
+                ctx.strokeStyle = '#FF9900';
+                ctx.lineWidth = 6;
+                ctx.beginPath();
+                ctx.arc(width / 2, photoY, photoSize / 2, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            
+            // "I AM ATTENDING" text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 80px Inter';
+            ctx.textAlign = 'center';
+            const attendingY = photo ? 490 : 350;
+            ctx.fillText('I AM ATTENDING', width / 2, attendingY);
+            
+            // Load and draw logo (AWS Student Community Day logo)
+            const logoImg = new Image();
+            logoImg.onload = function() {
+                const logoWidth = 400;
+                const logoHeight = (logoImg.height / logoImg.width) * logoWidth;
+                const logoX = (width / 2) - (logoWidth / 2);
+                const logoY = attendingY + 30;
+                
+                // Draw logo with rounded corners effect
+                ctx.save();
+                ctx.beginPath();
+                ctx.roundRect(logoX, logoY, logoWidth, logoHeight, 15);
+                ctx.clip();
+                ctx.drawImage(logoImg, logoX, logoY, logoWidth, logoHeight);
+                ctx.restore();
+                
+                // Continue drawing rest of badge
+                drawRestOfBadge(attendingY + logoHeight + 140);
             };
-            document.head.appendChild(script);
+            logoImg.onerror = function() {
+                // If logo fails to load, continue without it
+                drawRestOfBadge(attendingY + 80);
+            };
+            logoImg.src = 'images/logo.jpg'; // Path to your logo
+            
+            // If logo doesn't load immediately, draw rest after timeout
+            setTimeout(() => {
+                if (!logoImg.complete) {
+                    drawRestOfBadge(attendingY + 80);
+                }
+            }, 100);
+        }
+        
+        function drawRestOfBadge(startY) {
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Meru Edition with decorative elements
+            const meruY = startY + 50;
+            ctx.fillStyle = '#8B5CF6';
+            ctx.font = 'bold 56px Orbitron';
+            ctx.textAlign = 'center';
+            ctx.fillText('MERU EDITION', width / 2, meruY);
+            
+            // Lines beside MERU EDITION
+            const meruWidth = ctx.measureText('MERU EDITION').width;
+            ctx.strokeStyle = '#FF9900';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(width / 2 - meruWidth / 2 - 80, meruY - 15);
+            ctx.lineTo(width / 2 - meruWidth / 2 - 20, meruY - 15);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(width / 2 + meruWidth / 2 + 20, meruY - 15);
+            ctx.lineTo(width / 2 + meruWidth / 2 + 80, meruY - 15);
+            ctx.stroke();
+            
+            // Year
+            ctx.fillStyle = '#FF9900';
+            ctx.font = 'bold 64px Inter';
+            ctx.fillText('2026', width / 2, meruY + 90);
+            
+            // Location and date at bottom (centered)
+            const bottomY = height - 130;
+            
+            // Location with map pin icon
+            ctx.font = 'bold 36px Orbitron';
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+            ctx.fillText('📍 Meru University of Science and Technology', width / 2, bottomY);
+            
+            // Date below location
+            ctx.font = 'bold 32px Orbitron';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+            ctx.fillText('28th February, 2026', width / 2, bottomY + 50);
+        }
+        
+        // Helper function to draw hexagon
+        function drawHexagon(x, y, size) {
+            ctx.beginPath();
+            for (let i = 0; i < 6; i++) {
+                const angle = (Math.PI / 3) * i;
+                const hx = x + size * Math.cos(angle);
+                const hy = y + size * Math.sin(angle);
+                if (i === 0) {
+                    ctx.moveTo(hx, hy);
+                } else {
+                    ctx.lineTo(hx, hy);
+                }
+            }
+            ctx.closePath();
+        }
+        
+        // Draw hexagon pattern decoration with purple theme
+        function drawHexagonPattern(x, y, size) {
+            ctx.save();
+            ctx.translate(x, y);
+            
+            // Outer hexagon - orange
+            ctx.strokeStyle = '#FF9900';
+            ctx.lineWidth = 2.5;
+            ctx.globalAlpha = 0.4;
+            drawHexagon(0, 0, size);
+            ctx.stroke();
+            
+            // Inner hexagon - purple
+            ctx.strokeStyle = '#8B5CF6';
+            ctx.lineWidth = 2;
+            ctx.globalAlpha = 0.4;
+            drawHexagon(0, 0, size * 0.7);
+            ctx.stroke();
+            
+            ctx.restore();
         }
     </script>
 </body>

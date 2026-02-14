@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS Student Community Day 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;600&family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -72,6 +72,22 @@
 
         nav a:hover {
             color: var(--aws-orange);
+        }
+
+        .attending-link {
+            background: var(--aws-orange);
+            color: var(--aws-dark) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .attending-link:hover {
+            background: var(--accent-blue);
+            color: var(--aws-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
         }
 
         .login-btn {
@@ -288,6 +304,44 @@
             color: var(--aws-orange);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        .scroll-indicator p {
+            color: var(--aws-orange);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--aws-orange);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
         }
 
         /* Section Styling */
@@ -1002,13 +1056,177 @@
         /* Footer */
         footer {
             background: #1a0d2e;
-            padding: 2rem 10%;
+            padding: 3rem 10%;
             text-align: center;
             border-top: 2px solid var(--aws-orange);
         }
 
         footer p {
             color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-social {
+            margin-bottom: 2rem;
+        }
+
+        .footer-social h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--aws-orange);
+            margin-bottom: 1rem;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-social-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--aws-light);
+            text-decoration: none;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 153, 0, 0.3);
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .footer-social-icon:hover {
+            background: rgba(255, 153, 0, 0.1);
+            border-color: var(--aws-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 153, 0, 0.3);
+        }
+
+        .footer-social-icon svg {
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-icon:hover svg {
+            transform: scale(1.1);
+        }
+
+        .footer-social-icon span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--aws-orange);
+        }
+
+        .footer-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--aws-orange), transparent);
+            margin: 2rem 0;
+        }
+
+        .footer-info {
+            margin-top: 1rem;
+        }
+
+        .footer-info p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(180deg, #1a0d2e 0%, #2d1b4e 100%);
+            padding: 5rem 10%;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 2px solid rgba(255, 153, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--aws-orange);
+            box-shadow: 0 15px 40px rgba(255, 153, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            color: var(--aws-orange);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--accent-blue);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-blue);
+            color: var(--aws-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
         }
 
         /* Organizers Section */
@@ -1262,6 +1480,10 @@
 
     nav a {
         padding: 0.3rem 0.5rem;
+    }
+
+    .attending-link {
+        padding: 0.4rem 0.8rem !important;
     }
 
     /* Hero Section */
@@ -1671,19 +1893,28 @@
     </style>
 </head>
 <body>
+   
+    <a href="#hero" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav>
         <div class="logo">AWS STUDENT COMMUNITY DAY 2026</div>
-        <ul>
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="navMenu">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#agenda">Agenda</a></li>
             <li><a href="#keynote">Keynote</a></li>
             <li><a href="#speakers">Speakers</a></li>
             <li><a href="#venue">Venue</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="#organizers">Organizers</a></li>
             <li><a href="#attendees">Attendees</a></li>
-            <li><a href="attending.html" target="_blank" style="color:white; font-weight: 700;">Attending??</a></li>
+            <li><a href="attending.html" class="attending-link">I'll be attending</a></li>
         </ul>
     </nav>
 
@@ -1711,6 +1942,14 @@
                     career by networking with industry leaders and fellow cloud enthusiasts.
                 </p>
             </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <p>Scroll for more</p>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2v14m0 4v-4m0 0l-4-4m4 4l4-4"/>
+            </svg>
         </div>
     </section>
 
@@ -2163,6 +2402,33 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p class="contact-intro">
+                Have questions about AWS Student Community Day Kenya 2026? We'd love to hear from you! 
+                Reach out to us via email for any inquiries about the event, registration, or collaboration opportunities.
+            </p>
+            
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>Get in touch with our organizing team</p>
+                    <a href="igariuramuraguri@gmail.com" class="contact-link">Send us an email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>Meru University of Science and Technology</p>
+                    <p class="contact-detail">Meru, Kenya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Organizers Section -->
     <section id="organizers" class="organizers">
         <h2>Organizing Committee</h2>
@@ -2215,10 +2481,59 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 AWS Student Community Day Kenya. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; font-size: 1rem;">
+                    Stay updated with the latest news and announcements about AWS Student Community Day Kenya
+                </p>
+                <div class="footer-social-icons">
+                    <a href="https://linkedin.com/company/aws-student-community-kenya" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Follow us on LinkedIn">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://instagram.com/awsstudentcommunitykenya" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Follow us on Instagram">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                            <circle cx="17.5" cy="6.5" r="1.5"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <p>&copy; 2026 AWS Student Community Day Kenya. All rights reserved.</p>
+            <div class="footer-info">
+                <p>Contact: <a href="mailto:awscommunityday.meru@gmail.com" style="color: var(--accent-blue); text-decoration: none;">awscommunityday.meru@gmail.com</a></p>
+                <p>Hosted at Meru University of Science and Technology | February 28, 2026</p>
+            </div>
+        </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navMenu.classList.toggle('mobile-open');
+        });
+
+        // Close mobile menu when clicking on a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navMenu.classList.remove('mobile-open');
+            });
+        });
+
         // Smooth scroll for navigation links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2233,12 +2548,59 @@
             });
         });
 
-        // Prevent default on CTA buttons (for demo purposes)
+        // Active navigation link highlighting based on scroll position
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        function updateActiveLink() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Prevent default on demo links (if any)
         document.querySelectorAll('a[href="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
             });
         });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-nav');
+        });
+
+        const skipLink = document.querySelector('.skip-link');
+        if (skipLink) {
+            skipLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.focus();
+                    target.scrollIntoView();
+                }
+            });
+        }
     </script>
 </body>
 </html>
