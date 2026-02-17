@@ -641,8 +641,8 @@
                 ctx.drawImage(logoImg, logoX, logoY, logoWidth, logoHeight);
                 ctx.restore();
                 
-                // Continue drawing rest of badge
-                drawRestOfBadge(attendingY + logoHeight + 140);
+                // Continue drawing rest of badge - MERU EDITION right after logo
+                drawRestOfBadge(attendingY + logoHeight + 60);
             };
             logoImg.onerror = function() {
                 // If logo fails to load, continue without it
@@ -662,8 +662,8 @@
             const width = canvas.width;
             const height = canvas.height;
             
-            // Meru Edition with decorative elements
-            const meruY = startY + 50;
+            // Meru Edition directly below logo with decorative elements
+            const meruY = startY + 30;
             ctx.fillStyle = '#8B5CF6';
             ctx.font = 'bold 56px Orbitron';
             ctx.textAlign = 'center';
@@ -683,28 +683,71 @@
             ctx.lineTo(width / 2 + meruWidth / 2 + 80, meruY - 15);
             ctx.stroke();
             
-            // Year
+            // Year centered below MERU EDITION
             ctx.fillStyle = '#FF9900';
             ctx.font = 'bold 64px Inter';
-            ctx.fillText('2026', width / 2, meruY + 90);
+            ctx.fillText('2026', width / 2, meruY + 80);
             
-            // Location and date at bottom (centered)
-            const bottomY = height - 160;
+            // Bottom section with date and location split left/right
+            const bottomY = height - 100;
             
-            // Location with map pin icon - split into two lines
+            // Date on the LEFT with emoji calendar icon
+            ctx.textAlign = 'left';
+            const leftX = 120;
+            
+            // Draw date with emoji calendar
             ctx.font = 'bold 32px Orbitron';
             ctx.fillStyle = 'white';
-            ctx.textAlign = 'center';
-            ctx.fillText('📍 Meru University of Science', width / 2, bottomY);
+            ctx.fillText('📅  28th Feb, 2026', leftX, bottomY);
             
-            // Second line of location
+            // Location on the RIGHT with custom location pin
+            const rightX = width - 120;
+            
+            // Draw location pin icon
+            const pinX = rightX - 280;
+            const pinY = bottomY - 25;
+            const pinSize = 45;
+            
+            // Draw pin shape
+            ctx.save();
+            ctx.fillStyle = '#00A8E8'; // Blue color for pin
+            ctx.strokeStyle = '#006D9E';
+            ctx.lineWidth = 3;
+            
+            // Pin body (teardrop shape)
+            ctx.beginPath();
+            ctx.arc(pinX, pinY, pinSize / 2.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            
+            // Pin point (bottom triangle)
+            ctx.beginPath();
+            ctx.moveTo(pinX - 8, pinY + 15);
+            ctx.lineTo(pinX + 8, pinY + 15);
+            ctx.lineTo(pinX, pinY + 35);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+            
+            // Inner white circle
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(pinX, pinY, pinSize / 6, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Green shadow/base
+            ctx.fillStyle = 'rgba(76, 175, 80, 0.4)';
+            ctx.beginPath();
+            ctx.ellipse(pinX, pinY + 38, 18, 6, 0, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.restore();
+            
+            // Draw "Meru University" text next to icon - centered vertically with icon
             ctx.font = 'bold 32px Orbitron';
-            ctx.fillText('and Technology', width / 2, bottomY + 45);
-            
-            // Date below location with more spacing
-            ctx.font = 'bold 30px Orbitron';
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-            ctx.fillText('28th February, 2026', width / 2, bottomY + 95);
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'left';
+            ctx.fillText('Meru University', pinX + 55, bottomY + 2);
         }
         
         // Helper function to draw hexagon
