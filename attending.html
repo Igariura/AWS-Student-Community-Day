@@ -308,6 +308,79 @@
             }
         }
 
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+
+            .form-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .badge-preview {
+                padding: 1.5rem;
+            }
+
+            .badge-preview h3 {
+                font-size: 1.3rem;
+            }
+
+            .badge-actions {
+                gap: 0.8rem;
+            }
+
+            .badge-btn {
+                font-size: 0.9rem;
+                padding: 0.7rem 1rem;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.85rem;
+            }
+
+            .form-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .badge-preview h3 {
+                font-size: 1.1rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+                padding: 0.9rem;
+            }
+        }
+
         /* Success Message */
         .success-message {
             display: none;
@@ -616,18 +689,22 @@
             ctx.fillText('2026', width / 2, meruY + 90);
             
             // Location and date at bottom (centered)
-            const bottomY = height - 130;
+            const bottomY = height - 160;
             
-            // Location with map pin icon
-            ctx.font = 'bold 36px Orbitron';
+            // Location with map pin icon - split into two lines
+            ctx.font = 'bold 32px Orbitron';
             ctx.fillStyle = 'white';
             ctx.textAlign = 'center';
-            ctx.fillText('📍 Meru University of Science and Technology', width / 2, bottomY);
+            ctx.fillText('📍 Meru University of Science', width / 2, bottomY);
             
-            // Date below location
+            // Second line of location
             ctx.font = 'bold 32px Orbitron';
+            ctx.fillText('and Technology', width / 2, bottomY + 45);
+            
+            // Date below location with more spacing
+            ctx.font = 'bold 30px Orbitron';
             ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-            ctx.fillText('28th February, 2026', width / 2, bottomY + 50);
+            ctx.fillText('28th February, 2026', width / 2, bottomY + 95);
         }
         
         // Helper function to draw hexagon

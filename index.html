@@ -104,6 +104,50 @@
             box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
         }
 
+        /* Hamburger Menu Button */
+        .menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(255, 153, 0, 0.1);
+            border: 2px solid var(--aws-orange);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 0.6rem 0.8rem;
+            z-index: 1001;
+            transition: all 0.3s;
+        }
+
+        .menu-btn:hover {
+            background: rgba(255, 153, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--aws-orange);
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .menu-btn.active {
+            background: rgba(255, 153, 0, 0.3);
+        }
+
+        .menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -1459,31 +1503,94 @@
 
 /* Tablet and below (768px) */
 @media (max-width: 768px) {
-    /* Navigation */
+    /* Navigation - Clean Mobile Design */
+    .menu-btn {
+        display: flex !important;
+    }
+
     nav {
-        padding: 0.8rem 3% !important;
-        flex-direction: column !important;
-        gap: 0.8rem !important;
+        padding: 1rem 5% !important;
+        flex-wrap: nowrap !important;
+        position: relative;
     }
 
     nav .logo {
-        font-size: 1rem !important;
-        text-align: center;
+        font-size: 1.1rem !important;
+        flex: 1;
     }
 
     nav ul {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 0.6rem !important;
-        font-size: 0.75rem !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 75% !important;
+        max-width: 300px !important;
+        height: 100vh !important;
+        background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 100%) !important;
+        backdrop-filter: blur(20px) !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        padding: 5rem 2rem 2rem 2rem !important;
+        gap: 0 !important;
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+        overflow-y: auto !important;
+        z-index: 998 !important;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5) !important;
+        border-left: 2px solid rgba(255, 153, 0, 0.3) !important;
+    }
+
+    nav ul.mobile-open {
+        right: 0 !important;
+    }
+
+    /* Overlay when menu is open */
+    nav ul.mobile-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    nav li {
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
     }
 
     nav a {
-        padding: 0.3rem 0.5rem;
+        display: block !important;
+        padding: 1rem 1.2rem !important;
+        font-size: 1rem !important;
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 153, 0, 0.2) !important;
+        transition: all 0.3s !important;
+    }
+
+    nav a:hover {
+        background: rgba(255, 153, 0, 0.15) !important;
+        border-color: var(--aws-orange) !important;
+        transform: translateX(5px) !important;
     }
 
     .attending-link {
-        padding: 0.4rem 0.8rem !important;
+        background: var(--aws-orange) !important;
+        border: 2px solid var(--aws-orange) !important;
+        margin-top: 1rem !important;
+    }
+
+    .attending-link:hover {
+        background: transparent !important;
+        color: var(--aws-orange) !important;
     }
 
     /* Hero Section */
@@ -2416,7 +2523,7 @@
                     <div class="contact-icon">📧</div>
                     <h3>Email Us</h3>
                     <p>Get in touch with our organizing team</p>
-                    <a href="igariuramuraguri@gmail.com" class="contact-link">Send us an email</a>
+                    <a href="/cdn-cgi/l/email-protection#95f4e2e6f6faf8f8e0fbfce1ecf1f4ecbbf8f0e7e0d5f2f8f4fcf9bbf6faf8" class="contact-link">Send us an email</a>
                 </div>
 
                 <div class="contact-card">
@@ -2510,13 +2617,13 @@
 
             <p>&copy; 2026 AWS Student Community Day Kenya. All rights reserved.</p>
             <div class="footer-info">
-                <p>Contact: <a href="mailto:awscommunityday.meru@gmail.com" style="color: var(--accent-blue); text-decoration: none;">awscommunityday.meru@gmail.com</a></p>
+                <p>Contact: <a href="/cdn-cgi/l/email-protection#f8998f8b9b9795958d96918c819c9981d6959d8a8db89f95999194d69b9795" style="color: var(--accent-blue); text-decoration: none;"><span class="__cf_email__" data-cfemail="fa9b8d89999597978f94938e839e9b83d4979f888fba9d979b9396d4999597">[email&#160;protected]</span></a></p>
                 <p>Hosted at Meru University of Science and Technology | February 28, 2026</p>
             </div>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navMenu = document.getElementById('navMenu');
