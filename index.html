@@ -1036,6 +1036,24 @@
             filter: grayscale(0.3);
         }
 
+        .school-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(255, 153, 0, 0.2));
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .school-card:hover .school-logo {
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 20px rgba(255, 153, 0, 0.4));
+        }
+
         .school-card h4 {
             font-size: 1.3rem;
             color: var(--aws-orange);
@@ -1866,6 +1884,12 @@
         font-size: 3rem !important;
     }
 
+    .school-logo {
+        width: 90px !important;
+        height: 90px !important;
+        padding: 10px !important;
+    }
+
     .schools-title {
         font-size: 1.5rem !important;
     }
@@ -2391,13 +2415,14 @@
         <div class="venue-container">
             <div class="venue-map">
                 <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8072592150693!2d37.70574427574571!3d0.13491519986377792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17883c967d5c1517%3A0x94e1dbf4dfea47bd!2sMeru%20University%20of%20Science%20and%20Technology!5e0!3m2!1sen!2ske!4v1770707132838!5m2!1sen!2ske"
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; border-radius: 15px;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                 src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1021342.2149458906!2d36.61061977378636!3d-0.5741111760735936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!3m2!1d-1.2920658999999999!2d36.8219462!4m5!1s0x17883c967d5c1517%3A0x94e1dbf4dfea47bd!2sMeru%20University%20of%20Science%20and%20Technology%2C%20Meru!3m2!1d0.13491519999999999!2d37.7083192!5e0!3m2!1sen!2ske!4v1771443439548!5m2!1sen!2ske" 
+                 width="100%" 
+                 height="100%" 
+                 style="border:0; border-radius: 15px;" 
+                 allowfullscreen="" 
+                 loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                   
                 </iframe>
             </div>
             
@@ -2453,11 +2478,11 @@
         
         <div class="attendees-stats">
             <div class="stat-card">
-                <div class="stat-number">250+</div>
+                <div class="stat-number">200+</div>
                 <div class="stat-label">Expected Attendees</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">5</div>
+                <div class="stat-number">4</div>
                 <div class="stat-label">Universities</div>
             </div>
             <div class="stat-card">
@@ -2470,46 +2495,18 @@
         
         <div class="schools-grid">
             <div class="school-card">
-                <div class="school-icon">🎓</div>
+                <img src="images/meru uni.png" alt="MUST Logo" class="school-logo">
                 <h4>Meru University of Science and Technology</h4>
                 <p class="school-location">Host University</p>
             </div>
 
             <div class="school-card">
-                <div class="school-icon">🎓</div>
+                <img src="images/chuka uni.jpg" alt="Chuka University Logo" class="school-logo">
                 <h4>Chuka University</h4>
                 <p class="school-location">Tharaka-Nithi</p>
             </div>
 
-            <div class="school-card">
-                <div class="school-icon">🎓</div>
-                <h4>Mount Kenya University</h4>
-                <p class="school-location">Thika</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-icon">🎓</div>
-                <h4>KCA University</h4>
-                <p class="school-location">Nairobi</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-icon">🎓</div>
-                <h4>Tharaka-Nithi University</h4>
-                <p class="school-location">Tharaka-Nithi</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-icon">🎓</div>
-                <h4>Kenya Methodist University(KEMU)</h4>
-                <p class="school-location">Meru</p>
-            </div>
-
-            <div class="school-card">
-                <div class="school-icon">🎓</div>
-                <h4>Meru National Polytechnic</h4>
-                <p class="school-location">Meru</p>
-            </div>
+           
         </div>
     </section>
 
@@ -2527,7 +2524,7 @@
                     <div class="contact-icon">📧</div>
                     <h3>Email Us</h3>
                     <p>Get in touch with our organizing team</p>
-                    <a href="/cdn-cgi/l/email-protection#95f4e2e6f6faf8f8e0fbfce1ecf1f4ecbbf8f0e7e0d5f2f8f4fcf9bbf6faf8" class="contact-link">Send us an email</a>
+                    <a href="/cdn-cgi/l/email-protection#a8c1cfc9dac1dddac9c5dddac9cfdddac1e8cfc5c9c1c486cbc7c5" class="contact-link"><span class="__cf_email__" data-cfemail="0168666073687473606c7473606674736841666c60686d2f626e6c">[email&#160;protected]</span></a>
                 </div>
 
                 <div class="contact-card">
@@ -2599,14 +2596,14 @@
                     Stay updated with the latest news and announcements about AWS Student Community Day Kenya
                 </p>
                 <div class="footer-social-icons">
-                    <a href="https://www.linkedin.com/groups/10118068/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Follow us on LinkedIn">
+                    <a href="https://linkedin.com/company/aws-student-community-kenya" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Follow us on LinkedIn">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
                             <circle cx="4" cy="4" r="2"/>
                         </svg>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://www.instagram.com/must_cloudclub?igsh=ZW13bmd5cXNsdjdx" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Follow us on Instagram">
+                    <a href="https://instagram.com/awsstudentcommunitykenya" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Follow us on Instagram">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
@@ -2627,7 +2624,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navMenu = document.getElementById('navMenu');
