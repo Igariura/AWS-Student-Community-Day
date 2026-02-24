@@ -24,8 +24,8 @@
         body {
             font-family: 'Inter', sans-serif;
             background: 
-                linear-gradient(135deg, rgba(15, 20, 25, 0.95) 0%, rgba(26, 58, 82, 0.92) 50%, rgba(15, 20, 25, 0.95) 100%),
-                url('images/background.jpeg') center/cover no-repeat fixed;
+                linear-gradient(135deg, rgba(15, 20, 25, 0.75) 0%, rgba(26, 58, 82, 0.70) 50%, rgba(15, 20, 25, 0.75) 100%),
+                url('images/backgroundx.jpeg') center/cover no-repeat fixed;
             min-height: 100vh;
             padding: 2rem;
             color: white;
@@ -144,7 +144,7 @@
         }
 
         .photo-upload-label:hover {
-            background: rgba(255, 153, 0, 0.1);
+            background: rgba(255, 153, 0, 0.08);
             border-color: var(--aws-orange);
         }
 
@@ -461,7 +461,7 @@
                             ⬇️ Download Badge
                         </button>
                         <button class="badge-btn badge-btn-secondary" id="shareBtn">
-                            📱 Share on Social Media
+                            📱 Share on LinkedIn
                         </button>
                     </div>
                 </div>
@@ -537,29 +537,6 @@
         });
 
         // Share badge
-        shareBtn.addEventListener('click', function() {
-            if (!badgeGenerated) {
-                alert('Please generate your badge first by submitting the form!');
-                return;
-            }
-            
-            const text = "I'm attending AWS Community Day Kenya 2026! 🚀 Join me at Kenya's premier student cloud event. #AWSCommunityDay #CloudComputing #Kenya";
-            
-            if (navigator.share) {
-                canvas.toBlob(function(blob) {
-                    const file = new File([blob], 'badge.png', { type: 'image/png' });
-                    navigator.share({
-                        title: 'AWS Community Day Kenya 2026',
-                        text: text,
-                        files: [file]
-                    }).catch(err => console.log('Share failed:', err));
-                });
-            } else {
-                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-                window.open(twitterUrl, '_blank');
-            }
-        });
-
         // Draw badge function
         function drawBadge(photo) {
             const width = canvas.width;
@@ -625,7 +602,7 @@
             ctx.font = 'bold 80px Inter';
             ctx.textAlign = 'center';
             const attendingY = photo ? 490 : 350;
-            ctx.fillText('AM AN ORGANIZER', width / 2, attendingY);
+            ctx.fillText('I AM ORGANIZING', width / 2, attendingY);
             
             // Load and draw logo (AWS Student Community Day logo)
             const logoImg = new Image();
