@@ -1980,11 +1980,14 @@
 }
 
 /* Extra small devices (phones, less than 480px) */
-@media (max-width: 480px) {
-    nav .logo {
-        font-size: 0.9rem !important;
-    }
-
+@media (max-width: 768px) {
+    /* Fix background image on mobile */
+    .hero {
+        background: 
+            linear-gradient(135deg, rgba(26, 13, 46, 0.90) 0%, rgba(45, 27, 78, 0.88) 50%, rgba(31, 18, 53, 0.90) 100%),
+            url('images/event-background.jpg') center center / cover no-repeat !important;
+        background-attachment: scroll !important;
+}
     nav ul {
         font-size: 0.7rem !important;
         gap: 0.4rem !important;
